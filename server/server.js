@@ -15,6 +15,9 @@ db.once('open', () => console.log(`Connected to database: ${process.env.DATABASE
 
 app.use(express.json());
 
+const contactsRouter = require('./routes/contacts');
+app.use('/contacts', contactsRouter);
+
 app.listen(process.env.PORT, () => {
   console.log(`Server started successfully on ${process.env.SERVER_URL}:${process.env.PORT} `)
 });

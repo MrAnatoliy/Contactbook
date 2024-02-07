@@ -1,0 +1,39 @@
+### Get all
+
+GET http://localhost:8080/contacts
+
+### Get one by id
+
+GET http://localhost:8080/contacts/65c26ef40607410019e9cad2
+
+### Create one
+
+POST http://localhost:8080/contacts
+Content-Type: application/json
+
+{
+  "first_name": "Anatoliy",
+  "last_name" : "Rodionov",
+  "phone": "+7(916)789-60-91",
+  "email": "rodionov.tolik@gmail.com"
+}
+
+### Create another one
+
+POST http://localhost:8080/contacts
+Content-Type: application/json
+
+{
+  "first_name": "Georgii",
+  "last_name" : "Radchuk",
+  "email": "georgeous1337@gmail.com"
+}
+
+### Patch one
+
+PATCH http://localhost:8080/contacts/65c26fcf0607410019e9cad7
+Content-Type: application/json
+
+{
+  "phone": "+7(985)337-85-85"
+}
