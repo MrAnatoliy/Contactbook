@@ -4,9 +4,11 @@ require('dotenv').config();
 //Requirements
 const express  = require('express');
 const mongoose = require('mongoose');
+const cors     = require('cors');
 
 //
 const app = express();
+app.use(cors());
 mongoose.connect(process.env.DATABASE_URI);
 const db = mongoose.connection;
 

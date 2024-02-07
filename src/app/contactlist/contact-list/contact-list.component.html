@@ -1,1 +1,12 @@
-<p>contact-list works!</p>
+<!-- contact-list.component.html -->
+
+<div class="contact-list">
+    <h2>Contact List</h2>
+    <ul>
+        <li *ngFor="let contact of contacts">
+            <div>{{ contact.first_name }}</div>
+            <div>{{ contact.email }}</div>
+            <!-- You can display other contact details here -->
+        </li>
+    </ul>
+</div>
