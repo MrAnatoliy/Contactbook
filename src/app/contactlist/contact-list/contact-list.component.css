@@ -1,0 +1,43 @@
+/* styles.css or any other CSS/SCSS file in your Angular project */
+
+/* Common button styles */
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Button color variations */
+.btn-green {
+  background-color: #4caf50; /* Green color */
+  color: white;
+}
+
+.btn-green:hover {
+  background-color: #296e2d; /* Darker shade of green on hover */
+}
+
+/* Add more color variations as needed */
+/* Button color variations */
+.btn-red {
+  background-color: #f44336; /* Red color */
+  color: white;
+}
+
+.btn-red:hover {
+  background-color: #9a1818; /* Darker shade of red on hover */
+}
+
+/* Button color variations */
+.btn-blue {
+  background-color: #2196f3; /* Blue color */
+  color: white;
+}
+
+.btn-blue:hover {
+  background-color: #1976d2; /* Darker shade of blue on hover */
+}

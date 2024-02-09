@@ -31,7 +31,7 @@ export class ContactService {
     // Method to update an existing contact
     updateContact(updatedContact: Contact): Observable<Contact> {
         const url = `${this.apiUrl}/${updatedContact._id}`;
-        return this.http.put<Contact>(url, updatedContact);
+        return this.http.patch<Contact>(url, updatedContact);
     }
 
     // Method to delete a contact

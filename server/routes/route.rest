@@ -24,9 +24,9 @@ POST http://localhost:8080/contacts
 Content-Type: application/json
 
 {
-  "first_name": "Georgii",
-  "last_name" : "Radchuk",
-  "email": "georgeous1337@gmail.com"
+  "first_name": "TEST",
+  "last_name" : "TEST",
+  "email": "TEST@gmail.com"
 }
 
 ### Patch one
@@ -37,3 +37,7 @@ Content-Type: application/json
 {
   "phone": "+7(985)337-85-85"
 }
+
+### Delete contact
+
+DELETE http://localhost:8080/contacts/65c6316de6e1e6b09b763475

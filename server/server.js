@@ -6,6 +6,8 @@ const express  = require('express');
 const mongoose = require('mongoose');
 const cors     = require('cors');
 
+var distDir = __dirname + "/dist/";
+
 //
 const app = express();
 app.use(cors());

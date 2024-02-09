@@ -57,7 +57,7 @@ router.patch('/:id', getContactById, async (req,res) => {
 //delete one by id
 router.delete('/:id', getContactById, async (req,res) => {
   try {
-    await res.contact.remove();
+    await res.contact.deleteOne();
     res.status(204).json({message: `Deleted contact: ${req.params.id}`});
   } catch (err) {
     res.status(500).json({message: err.message});

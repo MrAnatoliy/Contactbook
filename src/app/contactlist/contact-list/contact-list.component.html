@@ -1,12 +1,32 @@
 <!-- contact-list.component.html -->
 
-<div class="contact-list">
-    <h2>Contact List</h2>
-    <ul>
-        <li *ngFor="let contact of contacts">
-            <div>{{ contact.first_name }}</div>
-            <div>{{ contact.email }}</div>
-            <!-- You can display other contact details here -->
-        </li>
-    </ul>
+<div class="contact-list p-10 w-full">
+  <h1 class="text-center text-4xl pb-8 font-bold text-gray-800">CONTACTS</h1>
+  <div class="flex justify-end mb-4">
+    <button (click)="newContact()" class="btn btn-blue">New Contact</button>
+  </div>
+  <table class="w-full">
+    <thead>
+    <tr class="bg-gray-800 text-white">
+      <th class="px-6 py-3 text-left">Full name</th>
+      <th class="px-6 py-3 text-left">Phone</th>
+      <th class="px-6 py-3 text-left">Email</th>
+      <th class="px-6 py-3"></th>
+      <th class="px-6 py-3"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let contact of contacts; let odd = odd" [class.bg-gray-100]="odd">
+      <td class="px-6 py-4 text-sm text-gray-800">{{contact.first_name}} {{contact.last_name}}</td>
+      <td class="px-6 py-4 text-sm text-gray-800">{{contact.phone}}</td>
+      <td class="px-6 py-4 text-sm text-gray-800">{{contact.email}}</td>
+      <td class="px-6 py-4">
+        <a href="/contact/{{contact._id}}" class="btn btn-green">Change</a>
+      </td>
+      <td class="px-6 py-4">
+        <button (click)="deleteContact(contact._id)" class="btn btn-red">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
 </div>
