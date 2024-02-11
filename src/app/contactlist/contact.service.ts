@@ -7,7 +7,7 @@ import { Contact } from './contact';
     providedIn: 'root'
 })
 export class ContactService {
-    private apiUrl = 'http://localhost:8080/contacts'; // API endpoint URL
+    private apiUrl = 'http://89.111.136.55:3001/contacts'; // API endpoint URL
 
     constructor(private http: HttpClient) {}
 

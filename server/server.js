@@ -7,7 +7,6 @@ const mongoose = require('mongoose');
 const path     = require('path');
 //const cors     = require('cors');
 
-
 //
 const app = express();
 
@@ -15,11 +14,14 @@ var distDir = path.join(__dirname, "/dist/browser");
 app.use(express.static(distDir));
 //app.use(cors());
 
-mongoose.connect(process.env.DATABASE_URI);
+mongoose.connect(process.env.MONGODB_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 const db = mongoose.connection;
 
-db.on('error', (err) => console.log(err));
-db.once('open', () => console.log(`Connected to database: ${process.env.DATABASE_URI}/${db.name}`));
+db.on('error', (err) => console.log('Cannot connect to the database', err));
+db.once('open', () => console.log(`Connected to database: ${process.env.MONGODB_URL}/${db.name}`));
 
 app.use(express.json());
 
@@ -38,5 +40,5 @@ app.get('*.js', function (req, res, next) {
 });
 
 app.listen(process.env.PORT, () => {
-  console.log(`Server started successfully on ${process.env.SERVER_URL}:${process.env.PORT} `)
+  console.log(`Server started successfully on port:${process.env.PORT} `)
 });

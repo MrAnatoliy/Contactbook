@@ -5,11 +5,10 @@
     "ng": "ng",
     "dev": "nodemon ./server/server.js",
     "start": "node ./server/server.js",
-    "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "e2e": "ng e2e",
-    "postinstall": "ng build --output-path dist "
+    "dev_build": "ng build --output-path server/dist "
   },
   "private": true,
   "dependencies": {
